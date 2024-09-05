@@ -1,0 +1,18 @@
+.mouse-hover{
+    & h2{
+        transition: all 1s;
+    } 
+}
+
+.mouse-hover:hover{
+    cursor: pointer;
+    & h2{
+        color: blue;
+        transition: all 1s;
+    }
+
+    & h3{
+        color: orange;
+        transition: all 1s;
+    }
+}
