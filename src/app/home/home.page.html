@@ -1,13 +1,13 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
 
-  
+  <ng-container *ngFor="let pokemon of this.apiService.pokemons">
+      <ion-row>
+        <ion-col>
+          <ion-item size="12">
+            <ion-label>{{ pokemon.name }}</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  </ng-container>
 
 </ion-content>
