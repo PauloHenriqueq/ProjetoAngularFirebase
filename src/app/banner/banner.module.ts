@@ -6,7 +6,12 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    SobrePageRoutingModule,
+    HeaderModule
+  ],
+  declarations: [Banner]
 })
 export class BannerModule { }
