@@ -8,6 +8,8 @@ import { CrudService } from '../services/crud.service';
 })
 export class PlanetasPage implements OnInit {
 
+  
+
   planeta: any={
     nome: null,
     possui_populacao: null,
@@ -17,9 +19,13 @@ export class PlanetasPage implements OnInit {
     foto: null
   }
 
+  planetas: any = [];
+
   constructor(
     public crudService: CrudService
-  ) { }
+  ) { 
+    this.getPlanetas();
+  }
 
   ngOnInit() {
   }
@@ -27,6 +33,25 @@ export class PlanetasPage implements OnInit {
   salvar(){
     console.log(this.planeta);
     this.crudService.insert(this.planeta, 'planetas');
+    this.getPlanetas();
+  }
+
+  remover(id: string){
+    alert(id);
+    this.crudService.remove(id, 'planetas');
+    
+      this.getPlanetas();
+   
+      
+    
+  }
+
+  getPlanetas(){
+    this.crudService.fetchAll('planetas')
+    .then(resp =>{
+      console.log(resp);
+      this.planetas = resp;
+    })
   }
 
 }
